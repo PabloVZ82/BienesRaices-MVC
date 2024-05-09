@@ -32,7 +32,7 @@ class Router
             $urlActual = $_SERVER['PATH_INFO'] ;
         } else {
             
-            $urlaux = $_SERVER['REQUEST_URI'] ?? '/';
+            $urlaux = $_SERVER['REQUEST_URI'] ;
             if($urlaux === "")$urlActual = '/';
             debuguear($urlaux);
         }
