@@ -29,16 +29,22 @@ class Router
 
         //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
         if (isset($_SERVER['PATH_INFO'])) {
-            $urlActual = $_SERVER['PATH_INFO'] ;
-            debuguear($urlActual);
-        } else {
-            
-            $urlaux = $_SERVER['REQUEST_URI'] ;
+            //$urlActual = $_SERVER['PATH_INFO'] ;//este esta agregando""
+            $urlaux = $_SERVER['PATH_INFO'] ;
             if($urlaux === ""){
                 $urlActual = '/';
             }else{
-                $urlActual = $_SERVER['REQUEST_URI'] ;
+                $urlActual = $_SERVER['PATH_INFO'];
             }
+
+            //debuguear($urlActual);
+        } else {
+            $urlActual = $_SERVER['REQUEST_URI'] ;
+            // if($urlaux === ""){
+            //     $urlActual = '/';
+            // }else{
+            //     $urlActual = $_SERVER['REQUEST_URI'] ;
+            // }
             
         }
         $method = $_SERVER['REQUEST_METHOD'];
