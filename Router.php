@@ -18,7 +18,7 @@ class Router
 
     public function comprobarRutas()
     {
-        
+
         // Proteger Rutas...
         session_start();
 
@@ -28,12 +28,11 @@ class Router
         $auth = $_SESSION['login'] ?? null;
 
         //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
-       // if (isset($_SERVER['PATH_INFO'])) {
-            //    $urlActual = $_SERVER['PATH_INFO'];
-           // } else {
-                $urlActual = $_SERVER['REQUEST_URI'];
-                //debuguear($urlActual);
-            //}
+        if (isset($_SERVER['PATH_INFO'])) {
+            $urlActual = $_SERVER['PATH_INFO'];
+        } else {
+            $urlActual = $_SERVER['REQUEST_URI'];
+        }
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
@@ -41,11 +40,11 @@ class Router
         } else {
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
-           //Proteger las rutas
-         if (in_array($urlActual, $rutas_protegidas) && !$auth) {
-             header('Location: /');
-         }
-        if ( $fn ) {
+        //Proteger las rutas
+        if (in_array($urlActual, $rutas_protegidas) && !$auth) {
+            header('Location: /');
+        }
+        if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
         } else {
