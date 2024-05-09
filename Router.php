@@ -31,7 +31,10 @@ class Router
         if (isset($_SERVER['PATH_INFO'])) {
             $urlActual = $_SERVER['PATH_INFO'] ;
         } else {
-            $urlActual = $_SERVER['REQUEST_URI'] ?? '/';
+            
+            $urlaux = $_SERVER['REQUEST_URI'] ?? '/';
+            if($urlaux === "")$urlActual = '/';
+            debuguear($urlaux);
         }
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -51,7 +54,7 @@ class Router
             
         } else {
             echo "Página No Encontrada o Ruta no válida";
-            debuguear($fn);
+           // debuguear($fn);
         }
     }
     // public function comprobarRutas()
