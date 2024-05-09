@@ -50,9 +50,8 @@ class Router
             call_user_func($fn, $this); // This es para pasar argumentos
             
         } else {
-            header('Location: /Nosotros');
-            // echo "Página No Encontrada o Ruta no válida";
-            // debuguear($urlActual);
+            echo "Página No Encontrada o Ruta no válida";
+            debuguear($urlActual);
         }
     }
     // public function comprobarRutas()
