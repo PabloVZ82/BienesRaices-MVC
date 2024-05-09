@@ -37,6 +37,7 @@ class Router
 
         if ($method === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
+            debuguear($fn);
         } else {
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
@@ -47,8 +48,11 @@ class Router
         if ($fn) {
             // Call user fn va a llamar una función cuando no sabemos cual sera
             call_user_func($fn, $this); // This es para pasar argumentos
+            
         } else {
-            echo "Página No Encontrada o Ruta no válida";
+            header('Location: /');
+            // echo "Página No Encontrada o Ruta no válida";
+            // debuguear($urlActual);
         }
     }
     // public function comprobarRutas()
