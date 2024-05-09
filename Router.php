@@ -51,7 +51,7 @@ class Router
             
         } else {
             echo "Página No Encontrada o Ruta no válida";
-            debuguear($urlActual);
+            debuguear($fn);
         }
     }
     // public function comprobarRutas()
