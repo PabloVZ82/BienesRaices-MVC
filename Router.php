@@ -28,7 +28,12 @@ class Router
         $auth = $_SESSION['login'] ?? null;
 
         //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
-        $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+       // if (isset($_SERVER['PATH_INFO'])) {
+            //    $urlActual = $_SERVER['PATH_INFO'];
+           // } else {
+                $urlActual = $_SERVER['REQUEST_URI'];
+                //debuguear($urlActual);
+            //}
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
