@@ -29,14 +29,15 @@ class Router
         ];
 
         //prueba
-        if (isset($_SERVER['PATH_INFO'])) {
-            //$urlActual = $_SERVER['PATH_INFO'];
-           $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
+        // if (isset($_SERVER['PATH_INFO'])) {
+        //     //$urlActual = $_SERVER['PATH_INFO'];
+        //    $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
             
-        } else {
-            $urlActual = $_SERVER['REQUEST_URI'];
-            //debuguear($urlActual);
-        }
+        // } else {
+        //     $urlActual = $_SERVER['REQUEST_URI'];
+        //     //debuguear($urlActual);
+        // }
         //Fin prueba
 
         //original code : $urlActual = $_SERVER['PATH_INFO'];
