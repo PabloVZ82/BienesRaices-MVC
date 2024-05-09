@@ -30,6 +30,7 @@ class Router
         //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
         if (isset($_SERVER['PATH_INFO'])) {
             $urlActual = $_SERVER['PATH_INFO'] ;
+            debuguear($urlActual);
         } else {
             
             $urlaux = $_SERVER['REQUEST_URI'] ;
@@ -38,7 +39,7 @@ class Router
             }else{
                 $urlActual = $_SERVER['REQUEST_URI'] ;
             }
-            debuguear($urlActual);
+            
         }
         $method = $_SERVER['REQUEST_METHOD'];
 
