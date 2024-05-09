@@ -31,12 +31,15 @@ class Router
         //prueba
         if (isset($_SERVER['PATH_INFO'])) {
             $urlActual = $_SERVER['PATH_INFO'];
+            
         } else {
             $urlActual = $_SERVER['REQUEST_URI'];
+            //debuguear($urlActual);
         }
         //Fin prueba
 
-        //original code : $urlActual = $_SERVER['PATH_INFO'];
+        //original code : 
+        $urlActual = $_SERVER['PATH_INFO'];
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         if ($metodo === 'GET') {
