@@ -34,7 +34,7 @@ class Router
             
             $urlaux = $_SERVER['REQUEST_URI'] ;
             if($urlaux === "")$urlActual = '/';
-            debuguear($urlaux);
+            
         }
         $method = $_SERVER['REQUEST_METHOD'];
 
@@ -54,6 +54,7 @@ class Router
             
         } else {
             echo "Página No Encontrada o Ruta no válida";
+            debuguear($urlaux);
            // debuguear($fn);
         }
     }
