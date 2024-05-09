@@ -30,7 +30,8 @@ class Router
 
         //prueba
         if (isset($_SERVER['PATH_INFO'])) {
-            $urlActual = $_SERVER['PATH_INFO'];
+            //$urlActual = $_SERVER['PATH_INFO'];
+           $urlActual = strtok($_SERVER['REQUEST_URI'], '?') ?? '/';
             
         } else {
             $urlActual = $_SERVER['REQUEST_URI'];
@@ -38,8 +39,7 @@ class Router
         }
         //Fin prueba
 
-        //original code : 
-        $urlActual = $_SERVER['PATH_INFO'];
+        //original code : $urlActual = $_SERVER['PATH_INFO'];
         $metodo = $_SERVER['REQUEST_METHOD'];
 
         if ($metodo === 'GET') {
