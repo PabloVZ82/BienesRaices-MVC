@@ -7,7 +7,6 @@ use MVC\Router;
 use Controllers\PropiedadController;
 use Controllers\VendedorController;
 use Controllers\PaginasController;
-//use Model\Propiedad;
 
 $router = new Router();
 //Zona Privada
