@@ -27,26 +27,30 @@ class Router
 
         $auth = $_SESSION['login'] ?? null;
 
-        //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
-        if (isset($_SERVER['PATH_INFO'])) {
-            //$urlActual = $_SERVER['PATH_INFO'] ;//este esta agregando""
-            $urlaux = $_SERVER['PATH_INFO'] ;
-            if($urlaux === ""){
-                $urlActual = '/';
-            }else{
-                $urlActual = $_SERVER['PATH_INFO'];
-            }
+        //PRUEBA 7
+        // $urlaux = $_SERVER['PATH_INFO'];
+       
+        // if($urlaux === null || $urlaux === ""){
+        //      $urlActual = $_SERVER['REQUERI_URI'];
+        //      debuguear($urlActual);
+        // } else {
+        //      $urlActual = $_SERVER['PATH_INFO'];
+        // }
 
-            //debuguear($urlActual);
-        } else {
-            $urlActual = $_SERVER['REQUEST_URI'] ;
-            // if($urlaux === ""){
-            //     $urlActual = '/';
-            // }else{
-            //     $urlActual = $_SERVER['REQUEST_URI'] ;
-            // }
-            
-        }
+        //$currentUrl/urlActual = $_SERVER['PATH_INFO'] ?? '/'; //version desarrollo
+        //FUNCION MAS APROX 
+         if (isset($_SERVER['PATH_INFO'])) {
+                 $urlActual = $_SERVER['PATH_INFO'];
+             }
+          else {
+             $urlActual = $_SERVER['REQUEST_URI'] ;        
+         }
+         //Prueba 8
+         if($urlActual === null || $urlActual === ""){
+               $urlActual = $_SERVER['REQUERI_URI'];
+                  debuguear($urlActual);
+             }
+
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
