@@ -38,7 +38,7 @@ class Router
          }
          //Prueba 8
          if($urlActual === null || $urlActual === ""){
-               $urlActual = $_SERVER['REQUERI_URI']?? '/';
+               $urlActual = $_SERVER['REQUERI_URI'];
                
              }
 
