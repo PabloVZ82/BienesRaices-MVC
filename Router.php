@@ -49,14 +49,14 @@ class Router
          //Prueba 8
          if($urlActual === null || $urlActual === ""){
                $urlActual = $_SERVER['REQUERI_URI']?? '/';
-               debuguear($_SERVER);
+               
              }
 
         $method = $_SERVER['REQUEST_METHOD'];
 
         if ($method === 'GET') {
             $fn = $this->rutasGET[$urlActual] ?? null;
-         
+            debuguear($fn);
         } else {
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
