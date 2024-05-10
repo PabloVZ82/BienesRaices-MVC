@@ -48,7 +48,7 @@ class Router
          //Prueba 8
          if($urlActual === null || $urlActual === ""){
                $urlActual = $_SERVER['REQUERI_URI']?? '/';
-                  debuguear($urlActual);
+                 // debuguear($urlActual);
              }
 
         $method = $_SERVER['REQUEST_METHOD'];
