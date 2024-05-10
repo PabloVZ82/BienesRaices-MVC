@@ -41,14 +41,16 @@ class Router
         //FUNCION MAS APROX 
          if (isset($_SERVER['PATH_INFO'])) {
                  $urlActual = $_SERVER['PATH_INFO'];
+                 debuguear($_SERVER); 
              }
           else {
-             $urlActual = $_SERVER['REQUEST_URI'] ;        
+             $urlActual = $_SERVER['REQUEST_URI'] ;
+                    
          }
          //Prueba 8
          if($urlActual === null || $urlActual === ""){
                $urlActual = $_SERVER['REQUERI_URI']?? '/';
-                 // debuguear($urlActual);
+               
              }
 
         $method = $_SERVER['REQUEST_METHOD'];
