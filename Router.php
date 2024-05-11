@@ -33,12 +33,13 @@ class Router
                  $urlActual = $_SERVER['PATH_INFO']; 
              }
           else {
-             $urlActual = $_SERVER['REQUEST_URI'] ;
+             $urlActual = $_SERVER['REQUEST_URI'];
                     
          }
          //Prueba 8
          if($urlActual === null || $urlActual === ""){
-               $urlActual = $_SERVER['REQUERI_URI'];
+               $urlActual = $_SERVER['REQUERI_URI'] ?? '/';
+               debuguear($urlActual);
                
              }
 
